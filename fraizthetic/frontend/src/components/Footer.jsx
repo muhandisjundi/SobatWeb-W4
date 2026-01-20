@@ -1,56 +1,192 @@
-import { Instagram, Twitter, Globe, Send, Mail, Phone } from 'lucide-react';
+import {
+  Instagram,
+  Globe,
+  Mail,
+  MapPin,
+  Sparkles,
+  Phone,
+  ShoppingBag,
+  Music,
+  MessageCircle
+} from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#E2E8F0] pt-10 pb-20 overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="bg-white/40 backdrop-blur-[50px] border border-white/80 rounded-[4rem] p-12 md:p-16 shadow-[0_-30px_60px_rgba(0,0,0,0.05)]">
-          <div className="grid md:grid-cols-4 gap-16">
-            
-            <div className="col-span-1 md:col-span-1 space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">C</div>
-                <span className="font-black text-2xl tracking-tighter italic uppercase text-slate-900">COREBIZ</span>
-              </div>
-              <p className="text-slate-500 font-medium leading-relaxed">Membangun masa depan digital dengan desain estetik dan performa kelas dunia.</p>
-            </div>
+    <footer className="bg-gradient-to-b from-white to-purple-50 pt-20 pb-10 border-t border-purple-100">
+      <div className="container mx-auto px-6">
+        <div className="grid gap-12 md:grid-cols-4 mb-16">
 
-            <div className="space-y-6">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Company</h4>
-              <ul className="space-y-3 font-bold text-slate-600 text-sm italic">
-                {['About Us', 'Our Services', 'Recent Projects', 'Client Testimonials'].map(item => (
-                  <li key={item} className="hover:text-indigo-600 transition-colors cursor-pointer">{item}</li>
-                ))}
-              </ul>
+          {/* Brand Section */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <Sparkles className="text-purple-500" size={24} />
+              <span className="text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-700 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                Fraizthetic
+              </span>
             </div>
-
-            <div className="space-y-6">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Contact</h4>
-              <div className="space-y-3 text-slate-600 font-bold text-sm">
-                <p className="flex items-center gap-2"><Mail size={14}/> hello@corebiz.com</p>
-                <p className="flex items-center gap-2"><Phone size={14}/> +62 812 3456 789</p>
-              </div>
-            </div>
-
-            <div className="space-y-6 text-right">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Stay Updated</h4>
-              <div className="relative group">
-                <input type="text" placeholder="Your Email" className="w-full bg-white/40 border border-white/60 rounded-2xl px-6 py-4 outline-none font-bold text-sm focus:bg-white/60 transition-all" />
-                <button className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 rounded-xl hover:bg-indigo-600 transition-all shadow-lg"><Send size={16}/></button>
-              </div>
-            </div>
-
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Wujudkan kulit impian dengan sentuhan teknologi medis terkini.
+              Harmoni antara kesehatan dan estetika untuk kecantikan alami Anda.
+            </p>
           </div>
-          
-          <div className="mt-16 pt-10 border-t border-indigo-200/30 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">© 2024 COREBIZ STUDIO. ALL RIGHTS RESERVED.</p>
-            <div className="flex gap-4">
-              {[Instagram, Twitter, Globe].map((Icon, i) => (
-                <div key={i} className="w-12 h-12 bg-white/40 backdrop-blur-md border border-white rounded-full flex items-center justify-center text-slate-700 hover:bg-indigo-600 hover:text-white transition-all cursor-pointer shadow-sm">
-                  <Icon size={20} />
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="mb-6 text-xs font-bold tracking-widest uppercase text-purple-900">
+              Discover
+            </h4>
+            <ul className="space-y-3 text-sm font-medium text-slate-500">
+              {["Treatments", "Specialists", "Skin Products", "Testimonials"].map(
+                (item, i) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      className="hover:text-purple-600 hover:translate-x-1 transition-all duration-300 inline-block"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="mb-6 text-xs font-bold tracking-widest uppercase text-purple-900">
+              Contact Us
+            </h4>
+            <div className="space-y-4 text-sm font-medium text-slate-500">
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/fraizthetic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-purple-600 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-100 transition-colors">
+                  <Instagram size={16} />
                 </div>
-              ))}
+                <span>@fraizthetic</span>
+              </a>
+
+              {/* TikTok */}
+              <a
+                href="https://www.tiktok.com/@fraizthetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-purple-600 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-100 transition-colors">
+                  <Music size={16} />
+                </div>
+                <span>@fraizthetic</span>
+              </a>
+
+              {/* Shopee */}
+              <a
+                href="https://shopee.co.id/fraizthetic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-purple-600 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-100 transition-colors">
+                  <ShoppingBag size={16} />
+                </div>
+                <span>Shopee Store</span>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:fraizthetic@gmail.com"
+                className="flex items-center gap-3 hover:text-purple-600 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 group-hover:bg-purple-100 transition-colors">
+                  <Mail size={16} />
+                </div>
+                <span>fraizthetic@gmail.com</span>
+              </a>
+
+              {/* Phone */}
+              <div className="flex items-center gap-3 text-slate-500">
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500">
+                  <Phone size={16} />
+                </div>
+                <span>+62 815-9777-945</span>
+              </div>
             </div>
+          </div>
+
+          {/* Location & CTA */}
+          <div>
+            <h4 className="mb-6 text-xs font-bold tracking-widest uppercase text-purple-900">
+              Visit Us
+            </h4>
+
+            <div className="flex gap-3 mb-6 items-start text-slate-500 text-sm">
+              <MapPin size={18} className="text-purple-500 mt-1 shrink-0" />
+              <p>
+                Golden Boulevard<br />
+                Serpong Utara, Tangerang Selatan<br />
+                Banten, Indonesia
+              </p>
+            </div>
+
+            <div className="flex gap-3 mb-6 items-start text-slate-500 text-sm">
+              <MapPin size={18} className="text-purple-500 mt-1 shrink-0" />
+              <p>
+                Rolling Hills Metro<br />
+                Tamalate, Makassar<br />
+                Sulawesi Selatan, Indonesia
+              </p>
+            </div>
+
+            {/* Social Icons / CTA Buttons */}
+            <div className="flex gap-3">
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/fraizthetic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-purple-200 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <Instagram size={18} />
+              </a>
+
+              {/* Website */}
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-purple-200 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <Globe size={18} />
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/6281597777945"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white shadow-lg shadow-green-200 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <MessageCircle size={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-purple-100 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
+            © {new Date().getFullYear()} Fraizthetic Aesthetic Clinic.
+          </p>
+          <div className="flex gap-6 text-[10px] font-bold text-purple-400 uppercase tracking-wider">
+            <a href="#" className="hover:text-purple-600 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-purple-600 transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
