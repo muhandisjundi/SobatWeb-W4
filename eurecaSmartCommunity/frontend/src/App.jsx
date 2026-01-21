@@ -16,10 +16,8 @@ function App() {
       <About />
       <Services />
       <Gallery />
-      <Testimonials />
       <Contact />
       <Footer />
-      <Chatbot />
     </div>
   );
 }

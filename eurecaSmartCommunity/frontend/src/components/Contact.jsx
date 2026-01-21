@@ -1,59 +1,127 @@
 import { motion } from 'framer-motion';
-import { Send, MapPin, Mail, Phone } from 'lucide-react';
+import { Send, Heart, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-32 bg-[#E2E8F0] relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-200/30 blur-[150px] rounded-full z-0" />
+    <section id="contact" className="py-32 bg-[#F7FBFC] relative overflow-hidden">
+      {/* Background Decor - Floating Orbs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-teal-100/30 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-pink-100/20 blur-[120px] rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-stretch">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Form Panel */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="bg-white/30 backdrop-blur-2xl border border-white/80 rounded-[4rem] p-12 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)]"
-          >
-            <h2 className="text-5xl font-black text-slate-900 mb-8 uppercase italic tracking-tighter leading-tight">
-              Get In <span className="text-indigo-600">Touch.</span>
-            </h2>
-            <form className="space-y-6">
-              <input type="text" placeholder="Full Name" className="w-full bg-white/40 border border-white/60 rounded-2xl px-6 py-5 outline-none focus:bg-white/70 transition-all font-bold placeholder:text-slate-400" />
-              <input type="email" placeholder="Email Address" className="w-full bg-white/40 border border-white/60 rounded-2xl px-6 py-5 outline-none focus:bg-white/70 transition-all font-bold placeholder:text-slate-400" />
-              <textarea placeholder="Tell us about your project" rows="4" className="w-full bg-white/40 border border-white/60 rounded-[2.5rem] px-6 py-5 outline-none focus:bg-white/70 transition-all font-bold resize-none placeholder:text-slate-400"></textarea>
-              <button className="w-full bg-indigo-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-indigo-200 hover:bg-indigo-700 transition-all flex items-center justify-center gap-3">
-                Send Vision <Send size={20} />
-              </button>
-            </form>
-          </motion.div>
-
-          {/* Map Panel Terpisah */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="relative min-h-[500px] bg-white/30 backdrop-blur-2xl border border-white/80 rounded-[4rem] p-5 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)]"
-          >
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24172037!2d106.759478!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4d430bcad%3A0x628043c7cf720f40!2sJakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-              className="w-full h-full rounded-[3rem] grayscale contrast-125 opacity-90"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+          <div className="grid lg:grid-cols-5 gap-16 items-start">
             
-            <div className="absolute bottom-12 left-12 right-12">
-              <div className="bg-white/70 backdrop-blur-2xl border border-white p-6 rounded-[2.5rem] shadow-2xl flex items-center gap-5">
-                <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg"><MapPin size={24}/></div>
-                <div>
-                  <p className="text-[10px] font-black text-indigo-600 uppercase tracking-widest leading-none mb-1">Our Studio</p>
-                  <p className="text-sm font-bold text-slate-900 leading-tight">SCBD, District 8, Jakarta Selatan</p>
-                </div>
+            {/* Left Side: Invitation Text & Values */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2 space-y-10"
+            >
+              <div>
+                <motion.span 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="inline-block px-4 py-1.5 rounded-full bg-teal-50 text-teal-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
+                >
+                  Open Volunteer Registration
+                </motion.span>
+                <h2 className="text-4xl md:text-5xl font-serif text-slate-800 leading-tight mb-6">
+                  Temukan Rumah bagi <span className="text-teal-500 italic">Jiwamu.</span>
+                </h2>
+                <p className="text-slate-500 font-light leading-relaxed text-lg italic">
+                  "Di Eureka, kamu tidak perlu berpura-pura. Jadilah dirimu sendiri, bertumbuhlah sesuai ritmemu."
+                </p>
               </div>
-            </div>
-          </motion.div>
 
+              {/* Trust Points */}
+              <div className="space-y-6">
+                {[
+                  { icon: ShieldCheck, title: "Ruang Aman & Rahasia", desc: "Privasimu adalah prioritas utama kami.", color: "text-sky-400" },
+                  { icon: Heart, title: "Dukungan Tanpa Syarat", desc: "Komunitas yang mendengar tanpa menghakimi.", color: "text-pink-400" },
+                  { icon: Zap, title: "Pertumbuhan Diri", desc: "Akses ke workshop dan sesi terapi eksklusif.", color: "text-teal-400" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4 items-start">
+                    <div className={`mt-1 ${item.color}`}><item.icon size={22} /></div>
+                    <div>
+                      <h4 className="font-serif text-lg text-slate-800 leading-none mb-1">{item.title}</h4>
+                      <p className="text-sm text-slate-500 font-light">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Side: The Form Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-3 bg-white rounded-[3.5rem] p-10 md:p-14 shadow-[0_40px_80px_-20px_rgba(20,184,166,0.08)] border border-white"
+            >
+              <div className="mb-10">
+                <h3 className="text-2xl font-serif text-slate-800 mb-2">Formulir Bergabung</h3>
+                <p className="text-sm text-slate-400 font-light">Isi data singkatmu, tim kami akan menyapamu segera.</p>
+              </div>
+
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-bold ml-4">Nama Panggilan</label>
+                  <input 
+                    type="text" 
+                    placeholder="Contoh: Budi"
+                    className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-100 focus:bg-white transition-all font-light"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-bold ml-4">WhatsApp / Telegram</label>
+                  <input 
+                    type="text" 
+                    placeholder="0812..."
+                    className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-100 focus:bg-white transition-all font-light"
+                  />
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-bold ml-4">Minat Utama</label>
+                  <select className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-teal-100 focus:bg-white transition-all font-light text-slate-500 appearance-none">
+                    <option>Pilih salah satu...</option>
+                    <option>Self-Improvement</option>
+                    <option>Support Group</option>
+                    <option>Relawan (Volunteer)</option>
+                    <option>Hanya Ingin Menyimak</option>
+                  </select>
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-bold ml-4">Ceritakan Sedikit Tentangmu</label>
+                  <textarea 
+                    placeholder="Apa yang membuatmu tertarik bergabung dengan Eureka?" 
+                    rows="3" 
+                    className="w-full bg-slate-50 border-none rounded-[2rem] px-6 py-5 outline-none focus:ring-2 focus:ring-teal-100 focus:bg-white transition-all font-light resize-none"
+                  ></textarea>
+                </div>
+
+                <div className="md:col-span-2 mt-4">
+                  <motion.button 
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-gradient-to-r from-teal-500 to-sky-500 text-white py-5 rounded-2xl font-bold uppercase tracking-widest text-[11px] shadow-xl shadow-teal-100 flex items-center justify-center gap-3 group"
+                  >
+                    Gabung Eureka Smart Community
+                    <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
+                  </motion.button>
+                  <p className="text-[9px] text-center text-slate-400 mt-6 leading-relaxed">
+                    Dengan menekan tombol di atas, kamu setuju untuk memulai perjalanan positif bersama Eureka Smart Community.
+                  </p>
+                </div>
+              </form>
+            </motion.div>
+
+          </div>
         </div>
       </div>
     </section>

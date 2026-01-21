@@ -1,56 +1,158 @@
-import { Instagram, Twitter, Globe, Send, Mail, Phone } from 'lucide-react';
+import {
+  Instagram,
+  Mail,
+  MapPin,
+  Heart,
+  MessageCircle,
+  Youtube,
+  Users,
+  Compass,
+  ArrowRight,
+  Music
+} from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    username: "eurekasmartcommunity",
+    label: "@eurekasmartcommunity",
+    baseUrl: "https://www.instagram.com/",
+    Icon: Instagram,
+    hover: "hover:text-pink-500",
+    iconColor: "text-pink-400"
+  },
+  {
+    name: "YouTube",
+    username: "eurekasmartcommunity",
+    label: "@eurekasmartcommunity",
+    baseUrl: "https://www.youtube.com/@",
+    Icon: Youtube,
+    hover: "hover:text-blue-500",
+    iconColor: "text-blue-400"
+  },
+  {
+    name: "TikTok",
+    username: "eurekasmartcommunity",
+    label: "@eurekasmartcommunity",
+    baseUrl: "https://www.tiktok.com/@",
+    Icon: Music,
+    hover: "hover:text-blue-500",
+    iconColor: "text-blue-400"
+  },
+  {
+    name: "Email",
+    username: "eurekasmartcommunity@gmail.com",
+    label: "eurekasmartcommunity@gmail.com",
+    baseUrl: "mailto:",
+    Icon: Mail,
+    hover: "hover:text-teal-600",
+    iconColor: "text-teal-400",
+    external: false
+  }
+];
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#E2E8F0] pt-10 pb-20 overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="bg-white/40 backdrop-blur-[50px] border border-white/80 rounded-[4rem] p-12 md:p-16 shadow-[0_-30px_60px_rgba(0,0,0,0.05)]">
-          <div className="grid md:grid-cols-4 gap-16">
-            
-            <div className="col-span-1 md:col-span-1 space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">C</div>
-                <span className="font-black text-2xl tracking-tighter italic uppercase text-slate-900">COREBIZ</span>
+    <footer className="bg-gradient-to-b from-white via-[#f0f9f9] to-[#e6f0f5] pt-20 pb-10 border-t border-teal-50">
+      <div className="container mx-auto px-6">
+        <div className="grid gap-12 md:grid-cols-4 mb-16">
+
+          {/* Brand Section */}
+          <div className="space-y-6 md:col-span-1">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 bg-teal-500 rounded-lg">
+                <Heart className="text-white" size={20} fill="currentColor" />
               </div>
-              <p className="text-slate-500 font-medium leading-relaxed">Membangun masa depan digital dengan desain estetik dan performa kelas dunia.</p>
+              <span className="text-2xl font-serif font-bold tracking-tight text-teal-900">
+                Eureka<span className="text-pink-400">.</span>
+              </span>
             </div>
+            <p className="text-slate-600 text-sm leading-relaxed font-light">
+              Ruang bertumbuh untuk jiwa yang lebih sehat. Kami percaya setiap individu berhak atas komunitas yang mendukung kesehatan mental dan kebahagiaan.
+            </p>
+          </div>
 
-            <div className="space-y-6">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Company</h4>
-              <ul className="space-y-3 font-bold text-slate-600 text-sm italic">
-                {['About Us', 'Our Services', 'Recent Projects', 'Client Testimonials'].map(item => (
-                  <li key={item} className="hover:text-indigo-600 transition-colors cursor-pointer">{item}</li>
-                ))}
-              </ul>
+          {/* Community Links */}
+          <div>
+            <h4 className="mb-6 text-[11px] font-bold tracking-[0.2em] uppercase text-teal-800/60">
+              Our Community
+            </h4>
+            <ul className="space-y-4 text-sm font-medium text-slate-600">
+              {["Support Groups", "Webinar Psikologi", "Mental Health Toolkit", "Volunteer"].map(
+                (item, i) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      className="hover:text-teal-600 transition-all duration-300 flex items-center group"
+                    >
+                      <span className="w-0 group-hover:w-4 transition-all duration-300 overflow-hidden text-teal-500 mr-0 group-hover:mr-2">
+                        <ArrowRight size={14} />
+                      </span>
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Social Connect */}
+          <div>
+            <h4 className="mb-6 text-[11px] font-bold tracking-[0.2em] uppercase text-teal-800/60">
+              Get Connected
+            </h4>
+
+            <div className="space-y-4 text-sm font-medium text-slate-600">
+              {socialLinks.map(
+                ({ name, username, label, baseUrl, Icon, hover, iconColor, external }) => (
+                  <a
+                    key={name}
+                    href={`${baseUrl}${username}`}
+                    target={external === false ? undefined : "_blank"}
+                    rel={external === false ? undefined : "noopener noreferrer"}
+                    className={`flex items-center gap-3 transition-colors ${hover}`}
+                  >
+                    <Icon size={18} className={iconColor} />
+                    <span>{label}</span>
+                  </a>
+                )
+              )}
             </div>
+          </div>
 
-            <div className="space-y-6">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Contact</h4>
-              <div className="space-y-3 text-slate-600 font-bold text-sm">
-                <p className="flex items-center gap-2"><Mail size={14}/> hello@corebiz.com</p>
-                <p className="flex items-center gap-2"><Phone size={14}/> +62 812 3456 789</p>
-              </div>
-            </div>
+          {/* Join CTA Section */}
+          <div className="bg-white/50 p-6 rounded-2xl border border-white backdrop-blur-sm shadow-sm">
+            <h4 className="mb-4 text-sm font-bold text-teal-900 font-serif">
+              Siap untuk bertumbuh?
+            </h4>
+            <p className="text-xs text-slate-500 mb-6 leading-relaxed">
+              Bergabunglah dengan ribuan anggota lainnya di grup WhatsApp eksklusif kami.
+            </p>
+            <a
+              href="https://wa.me/your-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-teal-100 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <MessageCircle size={16} />
+              GABUNG KOMUNITAS
+            </a>
+          </div>
+        </div>
 
-            <div className="space-y-6 text-right">
-              <h4 className="font-black uppercase text-xs tracking-[0.2em] text-indigo-600">Stay Updated</h4>
-              <div className="relative group">
-                <input type="text" placeholder="Your Email" className="w-full bg-white/40 border border-white/60 rounded-2xl px-6 py-4 outline-none font-bold text-sm focus:bg-white/60 transition-all" />
-                <button className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 rounded-xl hover:bg-indigo-600 transition-all shadow-lg"><Send size={16}/></button>
-              </div>
-            </div>
-
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-teal-100 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <Compass size={14} className="text-teal-400" />
+            <p className="text-[10px] font-medium tracking-wider text-slate-400 uppercase font-sans">
+              © {new Date().getFullYear()} Eureka Smart Community. Be Kind to Your Mind.
+            </p>
           </div>
           
-          <div className="mt-16 pt-10 border-t border-indigo-200/30 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">© 2024 COREBIZ STUDIO. ALL RIGHTS RESERVED.</p>
-            <div className="flex gap-4">
-              {[Instagram, Twitter, Globe].map((Icon, i) => (
-                <div key={i} className="w-12 h-12 bg-white/40 backdrop-blur-md border border-white rounded-full flex items-center justify-center text-slate-700 hover:bg-indigo-600 hover:text-white transition-all cursor-pointer shadow-sm">
-                  <Icon size={20} />
-                </div>
-              ))}
-            </div>
+          <div className="flex gap-8 text-[10px] font-bold text-teal-700/50 uppercase tracking-[0.1em]">
+            <a href="#" className="hover:text-pink-400 transition-colors">Safe Space Policy</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Terms</a>
           </div>
         </div>
       </div>

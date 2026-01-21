@@ -1,123 +1,109 @@
 import { motion } from 'framer-motion';
-import { Shirt, Scissors, Truck, Heart, Check, ShoppingBag } from 'lucide-react';
+import { Heart, Users, MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
 
 const Services = () => {
-  // Variasi untuk animasi kontainer (stagger children)
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
+  const programs = [
+    { 
+      icon: Heart, 
+      title: 'Support Group', 
+      desc: 'Ruang aman untuk berbagi cerita dan saling menguatkan dalam perjalanan kesehatan mental.',
+      color: 'bg-teal-50',
+      iconColor: 'text-teal-500'
+    },
+    { 
+      icon: Users, 
+      title: 'Expert Talks', 
+      desc: 'Edukasi mendalam bersama praktisi psikologi untuk memahami diri lebih baik.',
+      color: 'bg-sky-50',
+      iconColor: 'text-sky-500'
+    },
+    { 
+      icon: MessageCircle, 
+      title: 'Peer Counseling', 
+      desc: 'Layanan pendengar setia dari rekan komunitas yang telah terlatih secara empatik.',
+      color: 'bg-pink-50',
+      iconColor: 'text-pink-400'
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } 
-    }
-  };
-
-  const features = [
-    { icon: Shirt, title: 'Premium Material', desc: 'Menggunakan bahan Cotton Combed 24s kualitas ekspor.' },
-    { icon: Scissors, title: 'Perfect Stitch', desc: 'Jahitan rantai standar distro yang kuat dan rapi.' },
-    { icon: Truck, title: 'Fast Shipping', desc: 'Pengiriman aman ke seluruh Indonesia dengan proteksi.' }
-  ];
-
-  const collections = [
-    { name: "Basic Pack", price: "149", features: ["1 pcs Plain Tee", "Premium Box", "Sticker Pack"], popular: false },
-    { name: "Bundle Mix", price: "399", features: ["3 pcs Any Items", "Exclusive Box", "Free Totebag", "Priority Shipping"], popular: true },
-    { name: "Custom Batch", price: "999", features: ["Min. 12 pcs", "Free Design Consult", "Custom Label", "Sample Proofing"], popular: false }
   ];
 
   return (
-    <section id="services" className="py-32 bg-[#F8FAFC] relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-100/40 blur-[100px] rounded-full z-0" />
-      
-      <div className="container mx-auto px-6 text-center mb-20 relative z-10">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl font-black uppercase italic text-slate-900 tracking-tighter"
-        >
-          Why Choose <span className="text-indigo-600">Our Apparel</span>
-        </motion.h2>
-      </div>
+    <section id="services" className="py-32 bg-[#FBFDFF] relative overflow-hidden">
+      {/* Dekorasi Latar Belakang - Soft Blurs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-100/30 blur-[120px] rounded-full -z-0" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-100/30 blur-[120px] rounded-full -z-0" />
 
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid md:grid-cols-3 gap-10 container mx-auto px-6 relative z-10 mb-32"
-      >
-        {features.map((item, idx) => (
-          <motion.div 
-            key={idx}
-            variants={itemVariants}
-            whileHover={{ y: -15, transition: { duration: 0.3 } }}
-            className="group bg-white/40 backdrop-blur-xl rounded-[3rem] p-10 border border-white/80 shadow-xl"
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-[11px] font-bold uppercase tracking-[0.3em] text-teal-600 mb-4 block"
           >
-            <div className="w-16 h-16 mb-8 rounded-2xl flex items-center justify-center bg-indigo-600 text-white shadow-lg shadow-indigo-200 group-hover:rotate-12 transition-transform duration-500">
-              <item.icon size={30} />
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-slate-900 uppercase italic tracking-tighter">{item.title}</h3>
-            <p className="text-slate-500 font-medium">{item.desc}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+            Our Community Programs
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-serif text-slate-800 mb-6"
+          >
+            Bertumbuh dalam <span className="text-pink-400 italic font-medium">Harmoni</span>
+          </motion.h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-200 to-pink-200 mx-auto rounded-full"></div>
+        </div>
 
-      <div id="pricing" className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-black uppercase italic tracking-tighter text-slate-900">Special <span className="text-indigo-600">Bundles</span></h2>
-        </motion.div>
-
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-        >
-          {collections.map((tier, i) => (
-            <motion.div
+        {/* Grid Program */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          {programs.map((p, i) => (
+            <motion.div 
               key={i}
-              variants={itemVariants}
-              whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
-              style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
-              className={`relative p-12 rounded-[3.5rem] border backdrop-blur-3xl transition-all duration-500
-                ${tier.popular ? 'bg-slate-900 text-white border-slate-700 shadow-2xl scale-105 z-20' : 'bg-white/40 border-white text-slate-900 shadow-xl'}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              whileHover={{ y: -10 }}
+              className={`p-12 rounded-[3.5rem] ${p.color} border border-white shadow-sm transition-all duration-500`}
             >
-              <div style={{ transform: "translateZ(50px)" }}>
-                {tier.popular && <span className="absolute -top-6 right-0 bg-indigo-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">Best Value</span>}
-                <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-4 opacity-70">{tier.name}</h3>
-                <div className="flex items-baseline gap-1 mb-8">
-                  <span className="text-xs font-bold mr-1">IDR</span>
-                  <span className="text-5xl font-black italic tracking-tighter">{tier.price}K</span>
-                </div>
-                <ul className="space-y-4 mb-10">
-                  {tier.features.map(f => (
-                    <li key={f} className="flex items-center gap-3 font-bold italic text-sm">
-                      <Check size={18} className="text-indigo-500" /> {f}
-                    </li>
-                  ))}
-                </ul>
-                <button className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 transition-all duration-300
-                  ${tier.popular ? 'bg-indigo-600 text-white hover:bg-indigo-500' : 'bg-white text-slate-900 border border-slate-200 hover:bg-slate-50'}`}>
-                  <ShoppingBag size={14} /> Add to Cart
-                </button>
+              <div className={`w-16 h-16 bg-white rounded-3xl flex items-center justify-center ${p.iconColor} shadow-sm mb-8`}>
+                <p.icon size={30} strokeWidth={1.5} />
               </div>
+              <h3 className="text-2xl font-serif mb-4 text-slate-800">{p.title}</h3>
+              <p className="text-slate-500 leading-relaxed font-light tracking-wide italic">
+                "{p.desc}"
+              </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Volunteer CTA Section */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative bg-gradient-to-br from-teal-500 via-teal-600 to-sky-500 rounded-[4rem] p-10 md:p-20 overflow-hidden shadow-2xl shadow-teal-100"
+        >
+          {/* Animated Sparkles Background */}
+          <div className="absolute top-0 right-0 p-10 opacity-20">
+            <Sparkles size={120} className="text-white animate-pulse" />
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center text-center">
+            <h3 className="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+              Mulai Perjalananmu <br className="hidden md:block" /> Sebagai Agen Perubahan
+            </h3>
+            <p className="max-w-2xl mx-auto mb-10 text-teal-50 font-light text-lg italic opacity-90">
+              Jadilah bagian dari relawan Eureka dan bantu kami menciptakan lingkungan yang lebih sehat secara mental bagi semua orang.
+            </p>
+            
+            <motion.a 
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group bg-white text-teal-600 px-12 py-5 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center gap-3 shadow-xl hover:bg-slate-50 transition-all"
+            >
+              Join as Volunteer 
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>
