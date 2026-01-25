@@ -109,10 +109,10 @@ const Contact = () => {
                   <motion.button 
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-teal-500 to-sky-500 text-white py-5 rounded-2xl font-bold uppercase tracking-widest text-[11px] shadow-xl shadow-teal-100 flex items-center justify-center gap-3 group"
+                    className="w-full bg-gradient-to-r from-teal-500 to-sky-500 text-white py-5 rounded-2xl font-bold uppercase tracking-widest text-[10px] shadow-xl shadow-teal-100 flex items-center justify-center gap-3 group"
                   >
-                    Gabung Eureka Smart Community
-                    <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
+                    Gabung Eureka
+                    
                   </motion.button>
                   <p className="text-[9px] text-center text-slate-400 mt-6 leading-relaxed">
                     Dengan menekan tombol di atas, kamu setuju untuk memulai perjalanan positif bersama Eureka Smart Community.

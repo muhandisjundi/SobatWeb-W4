@@ -80,9 +80,9 @@ const Navbar = () => {
                 </motion.a>
               ))}
               
-              <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white py-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-purple-200">
-                <Phone size={18} />
-                WhatsApp Consultation
+              <button className="mt-4 w-full  bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white py-5 rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-purple-200">
+              
+                Consultation
               </button>
             </div>
           </motion.div>

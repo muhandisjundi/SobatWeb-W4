@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Hero = () => (
-    <section className="relative min-h-screen pt-24 pb-12 px-6 flex flex-col md:flex-row items-center justify-center gap-12 bg-[#F9F9F9]">
+    <section id='home' className="relative min-h-screen pt-24 pb-12 px-6 flex flex-col md:flex-row items-center justify-center gap-12 bg-[#F9F9F9]">
         <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-lg shadow-2xl">
                 <img
