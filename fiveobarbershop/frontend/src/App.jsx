@@ -7,6 +7,7 @@ import Pricing from './components/Pricing';
 import Academy from './components/Academy';
 import Lifestyle from './components/Lifestyle';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Academy />
       <Lifestyle />
       <Footer />
+      <Chatbot />
     </div>
   );
 }
