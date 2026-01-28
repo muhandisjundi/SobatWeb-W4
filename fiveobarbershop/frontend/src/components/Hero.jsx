@@ -12,7 +12,7 @@ const Hero = () => (
             </div>
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-start gap-6 max-w-xl">
-            <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter">
+            <h1 className="text-5xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter">
                 REAL <br />
                 BARBER <br />
                 FOR REAL <br />

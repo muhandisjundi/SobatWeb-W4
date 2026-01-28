@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Scissors, Ruler, Sparkles } from 'lucide-react';
 
 const FeatureCard = ({ title, desc, Icon, index }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -16,7 +16,7 @@ const FeatureCard = ({ title, desc, Icon, index }) => (
     <span className="absolute -right-4 -bottom-4 text-white/[0.02] text-9xl font-black italic group-hover:text-white/[0.05] transition-colors pointer-events-none">
       0{index + 1}
     </span>
-    
+
     {/* Lucide Icon Container */}
     <div className="mb-8 p-3 inline-block bg-white/5 rounded-xl group-hover:bg-white group-hover:text-black transition-all duration-500">
       <Icon size={32} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500" />
@@ -28,7 +28,7 @@ const FeatureCard = ({ title, desc, Icon, index }) => (
     <p className="text-gray-400 text-sm leading-relaxed relative z-10 max-w-[250px]">
       {desc}
     </p>
-    
+
     {/* Hover Line Animation */}
     <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-700 group-hover:w-full" />
   </motion.div>
@@ -36,45 +36,45 @@ const FeatureCard = ({ title, desc, Icon, index }) => (
 
 const OurCraft = () => {
   const crafts = [
-    { 
-      icon: Scissors, 
-      title: "Heritage", 
-      desc: "Keahlian tradisional puluhan tahun yang diwariskan melalui generasi master barber terbaik." 
+    {
+      icon: Scissors,
+      title: "Heritage",
+      desc: "Keahlian tradisional puluhan tahun yang diwariskan melalui generasi master barber terbaik."
     },
-    { 
-      icon: Ruler, 
-      title: "Precision", 
-      desc: "Setiap potongan adalah mahakarya teknis dengan simetri matematis dan visi estetika tajam." 
+    {
+      icon: Ruler,
+      title: "Precision",
+      desc: "Setiap potongan adalah mahakarya teknis dengan simetri matematis dan visi estetika tajam."
     },
-    { 
-      icon: Sparkles, 
-      title: "Lifestyle", 
-      desc: "Bukan sekadar potong rambut, ini adalah pernyataan rasa percaya diri pada dunia." 
+    {
+      icon: Sparkles,
+      title: "Lifestyle",
+      desc: "Bukan sekadar potong rambut, ini adalah pernyataan rasa percaya diri pada dunia."
     }
   ];
 
   return (
-    <section id="about" className="py-32 px-6 bg-black text-white overflow-hidden">
+    <section id="about" className="relative py-32 px-6 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start lg:items-end gap-10 mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic">
-              Our <br /> 
-              <span 
-                className="text-transparent" 
+              Our <br />
+              <span
+                className="text-transparent"
                 style={{ WebkitTextStroke: '1px rgba(255,255,255,0.6)' }}
               >
                 Identity
               </span>
             </h2>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
